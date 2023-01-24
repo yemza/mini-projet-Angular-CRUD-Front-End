@@ -1,1 +1,43 @@
-<p>nav-bare works!</p>
+<header class="border-b border-palette-lighter sticky top-0 z-20 bg-white">
+    <div
+      class="flex items-center justify-between mx-auto max-w-6xl px-6 pb-2 pt-2"
+    >
+      <a class="cursor-pointer">
+        <h1 class="flex no-underline">
+          <img
+            height="32"
+            width="32"
+            alt="logo"
+            class="h-8 w-8 mr-1 object-contain"
+            src="../../../../assets/icon.svg"
+          />
+          <span class="text-xl font-primary font-bold tracking-tight pt-1">
+            Stickers
+          </span>
+        </h1>
+      </a>
+  
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div class="flex space-x-7">
+            <!-- Primary Navbar items -->
+            <div class="hidden md:flex items-center space-x-1">
+              <a
+                routerLink="/utilisateurs"
+                routerLinkActive="border-b-4 border-purple-500"
+                class="py-4 px-2 text-black-500 font-semibold transition duration-300 hover:text-purple-500 hover:border-b-4 hover:border-purple-500"
+                >Utisteurs</a
+              >
+              <a
+                routerLink="/Ajout"
+                routerLinkActive="border-b-4 border-purple-500"
+                class="py-4 px-2 text-black-500 font-semibold transition duration-300 hover:text-purple-500 hover:border-b-4 hover:border-purple-500"
+                >Ajout</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
