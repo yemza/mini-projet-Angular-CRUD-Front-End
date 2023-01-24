@@ -15,7 +15,7 @@ export class UtilisateurService {
  /**
   * get All Utilisateur
   */
- public getUsers() {
+  getUsers() {
   this.http.get(environment.ApiURL+ "getUsers");
  }
 
@@ -23,7 +23,7 @@ export class UtilisateurService {
  /**
   * get USer by ID
   */
- public  getUserbyId(idUser :number) {
+   getUserbyId(idUser :number) {
   this.http.get(environment.ApiURL +"getUsers?idUtilisateur=" +idUser);
  }
 
@@ -31,7 +31,7 @@ export class UtilisateurService {
  /**
   * delete user by id
   */
- public deleteUserbyId(idUser :number) {
+  deleteUserbyId(idUser :number) {
   this.http.delete(environment.ApiURL +"getUsers?idUtilisateur=" +idUser);
 
  }
@@ -39,7 +39,7 @@ export class UtilisateurService {
   /**
   * name
   */
-  public addUser(user :IUser) {
+   addUser(user :IUser) {
     this.http.post(environment.ApiURL +"getUsers?idUtilisateur=" , user);
   
    }
