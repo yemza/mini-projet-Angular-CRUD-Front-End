@@ -1,0 +1,179 @@
+
+
+
+<form class="w-full pl-60 pr-60 pt-10" [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+    <div class="flex flex-wrap -mx-3 mb-3">
+      <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+          First Name
+        </label>
+        <input 
+        formControlName="firstName"
+        [ngClass]="{
+            'is-valid': form.get('firstName')?.valid,
+            'is-invalid':
+              form.get('firstName')?.invalid &&
+              form.get('firstName')?.touched
+          }"
+        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="text" placeholder="Jane">
+        <div
+        class="text-red-700 "
+
+        *ngIf="
+          form.get('firstName')?.invalid &&
+            form.get('firstName')?.touched
+        "
+      >
+      city is Required
+      </div>
+    </div>
+      <div class="w-full md:w-1/2 px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+          Last Name
+        </label>
+        <input 
+        formControlName="lastName"
+        [ngClass]="{
+            'is-valid': form.get('lastName')?.valid,
+            'is-invalid':
+              form.get('lastName')?.invalid &&
+              form.get('lastName')?.touched
+          }"
+        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+        <div
+        class="text-red-700 "
+
+        *ngIf="
+          form.get('lastName')?.invalid &&
+            form.get('lastName')?.touched
+        "
+      >
+       Last Name is Required
+      </div>
+    </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-3">
+        <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+            City
+          </label>
+          <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name"  placeholder="City"
+            name="cities" id="cities"
+            formControlName="city" 
+            [ngClass]="{
+                'is-valid': form.get('city')?.valid,
+                'is-invalid':
+                  form.get('city')?.invalid &&
+                  form.get('city')?.touched 
+              }">
+             <option *ngFor="let city of cities" [value]="city.id">{{city.cityName}}</option>
+          </select>
+          <div
+          class="text-red-700 "
+
+          *ngIf="
+            form.get('cities')?.invalid &&
+              form.get('cities')?.touched
+          "
+          
+        >
+        city is Required
+        </div>
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+            Country
+          </label>
+          <span class="disabled appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 " id="grid-last-name">
+            Morocco
+          </span>
+         </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-3">
+        <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+            Birth Day
+          </label>
+          <input 
+          formControlName="BirthDate"
+          [ngClass]="{
+            'is-valid': form.get('BirthDate')?.valid,
+            'is-invalid':
+              form.get('BirthDate')?.invalid &&
+              form.get('BirthDate')?.touched 
+          }"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="date" placeholder="BirthDay">
+          <div
+          class="text-red-700 "
+          *ngIf="
+            form.get('BirthDate')?.invalid &&
+              form.get('BirthDate')?.touched
+          "
+        >
+        BirthDate is Required
+        </div>
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+            Username
+          </label>
+          <input 
+          formControlName="userName"
+          [ngClass]="{
+            'is-valid': form.get('userName')?.valid,
+            'is-invalid':
+              form.get('userName')?.invalid &&
+              form.get('userName')?.touched
+          }"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Username"
+          >
+          <div
+          class="text-red-700 "
+
+          *ngIf="
+            form.get('userName')?.invalid &&
+              form.get('userName')?.touched
+          "
+        >
+        BirthDate is Required
+        </div>
+        </div>
+      </div>
+    <div class="flex flex-wrap -mx-3 mb-3">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          E-mail
+        </label>
+        <input 
+        formControlName="email"
+        [ngClass]="{
+            'is-valid': form.get('email')?.valid,
+            'is-invalid':
+              form.get('email')?.invalid &&
+              form.get('email')?.touched 
+          }"
+
+        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="Email">
+        <div
+        class="text-red-700 "
+
+        *ngIf="
+          form.get('email')?.invalid &&
+            form.get('email')?.touched
+        "
+      >
+      email is Required
+      </div> 
+    </div>
+    </div>
+   
+    <div class="md:flex md:items-center" *ngIf="form.valid">
+      <div class="md:w-1/3">
+        <button class="shadow bg-purple-700 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+          Submit
+        </button>
+      </div>
+      <div class="md:w-2/3"></div>
+    </div>
+  </form>

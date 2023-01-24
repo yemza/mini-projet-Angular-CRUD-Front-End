@@ -6,18 +6,18 @@ const routes: Routes = [
      
   {
     path : '',
-    redirectTo :'/utilisateurs',
+    redirectTo :'/application',
     pathMatch :'full'
   },
 
   {
-    path : 'utilisateurs',
+    path : 'application',
     loadChildren: () => import('./application/application.module').then(m => m.ApplicationModule)
   },
 
   {
     path : '**',
-    redirectTo :'/utilisateurs',
+    redirectTo :'/application',
     pathMatch :'full'
   },
 ];
