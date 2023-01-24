@@ -25,7 +25,7 @@ export class UtilisateurService {
   * get USer by ID
   */
    getUserbyId(idUser :number): Observable<IUser>  {
-  return this.http.get(environment.ApiURL + "getUsers?idUtilisateur=" + idUser);
+  return this.http.get(environment.ApiURL + "getUser?idUtilisateur=" + idUser);
  }
 
 
@@ -33,7 +33,7 @@ export class UtilisateurService {
   * delete user by id
   */
   deleteUserbyId(idUser :number): Observable<any>  {
-  return this.http.delete(environment.ApiURL + "getUsers?idUtilisateur=" + idUser);
+  return this.http.delete(environment.ApiURL + "removeUser?idUtilisateur=" + idUser);
 
  }
 
@@ -41,8 +41,17 @@ export class UtilisateurService {
   * name
   */
    addUser(user :IUser): Observable<IUser>  {
-   return this.http.post(environment.ApiURL +"getUsers?idUtilisateur=" , user);
+   return this.http.post(environment.ApiURL +"addUser" , user);
   
    }
+
+   
+  /**
+  * name
+  */
+  updateUser(user :IUser): Observable<IUser>  {
+    return this.http.post(environment.ApiURL +"updateUser" , user);
+   
+    }
 
 }
