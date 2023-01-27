@@ -6,7 +6,7 @@ export interface IUser {
   lastName?: String;
   email?: String;
   userName?: String;
-  BirthDate?: String;
+  birthDate?: Date ;
   city?: ICity;
   country?: String;
 }

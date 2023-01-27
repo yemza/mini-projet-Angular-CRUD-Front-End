@@ -10,11 +10,20 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        path : '',
+        redirectTo :'/application/utilisateurs',
+        pathMatch :'full'
+      },
+      {
         path: 'utilisateurs',
         component: ListUtilisateurComponent,
       },
       {
         path: 'addUser',
+        component: AddUserComponent,
+      },
+      {
+        path: 'updateUser/:id',
         component: AddUserComponent,
       },
     ],

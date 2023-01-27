@@ -6,7 +6,7 @@ const routes: Routes = [
      
   {
     path : '',
-    redirectTo :'/application',
+    redirectTo :'/application/utilisateurs',
     pathMatch :'full'
   },
 
@@ -16,8 +16,14 @@ const routes: Routes = [
   },
 
   {
+    path : 'application',
+    redirectTo :'/application/utilisateurs',
+    pathMatch :'full'
+  },
+
+  {
     path : '**',
-    redirectTo :'/application',
+    redirectTo :'/application/utilisateurs',
     pathMatch :'full'
   },
 ];
